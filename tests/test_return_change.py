@@ -15,3 +15,9 @@ def test_balance_25_cents():
     Assert that no change returned when balance is 0.
     """
     assert vending_machine.return_change(25) == [25]
+
+def test_balance_400_cents():
+    """
+    Assert that no change returned when balance is 0.
+    """
+    assert vending_machine.return_change(400) == [200, 200]
