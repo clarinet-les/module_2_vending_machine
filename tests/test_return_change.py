@@ -12,12 +12,18 @@ def test_no_change_required():
 
 def test_balance_25_cents():
     """
-    Assert that no change returned when balance is 0.
+    Assert that one quarter is returned when balance is 25.
     """
     assert vending_machine.return_change(25) == [25]
 
 def test_balance_400_cents():
     """
-    Assert that no change returned when balance is 0.
+    Assert that 2 x $2 are returned when change is 400.
     """
     assert vending_machine.return_change(400) == [200, 200]
+
+def test_balance_300_cents():
+    """
+    Assert that 1 x $1 and 1 x $2 is returned when change is 300.
+    """
+    assert vending_machine.return_change(300) == [200, 100]
