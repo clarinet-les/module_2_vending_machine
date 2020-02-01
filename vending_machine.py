@@ -22,8 +22,8 @@ def buy_product(product, balance):
         raise ValueError
 
     product_cost = {"drink":275, "chips":225, "candy":315}
-    price = product_cost[product]
-    if price > balance:
+
+    if product_cost[product] > balance:
         raise InsufficientFunds
 
     remaining_balance = balance - product_cost[product]

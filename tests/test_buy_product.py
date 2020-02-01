@@ -52,3 +52,10 @@ def test_insufficient_funds_chips():
     """
     with pytest.raises(vending_machine.InsufficientFunds):
         assert vending_machine.buy_product("chips", 224)
+
+def test_calculate_remaining_funds():
+    """
+    Asserts when the customer buys a drink with 300, and the drink costs 275.
+    25 cents will remain.
+    """
+    assert vending_machine.buy_product("drink", 300) == 25
