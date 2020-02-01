@@ -18,7 +18,7 @@ def buy_product(product, balance):
     if product not in valid_products:
         raise ValueError
 
-    product_cost = {"drink":275, "candy":225, "chips":315}
+    product_cost = {"drink":275, "chips":225, "candy":315}
     remaining_balance = balance - product_cost[product]
     return remaining_balance
 
