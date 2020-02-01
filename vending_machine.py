@@ -14,6 +14,10 @@ def insert_coin(coin, inserted_coins):
     return inserted_coins
 
 def buy_product(product, balance):
+    valid_products = ["drink", "candy", "chips"]
+    if product not in valid_products:
+        raise ValueError
+
     product_cost = {"drink":275, "candy":225, "chips":315}
     remaining_balance = balance - product_cost[product]
     return remaining_balance
