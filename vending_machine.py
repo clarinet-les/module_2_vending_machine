@@ -1,13 +1,15 @@
 """
 A virtual vending machine.
 """
+VALID_COINS = [200, 100, 25, 10, 5]
+
 def insert_coin(coin, inserted_coins):
     """
     Function to add the newly inserted coin to the total for
     the already inserted coins.
     """
-    valid_coins = [5, 10, 25, 100, 200]
-    if coin not in valid_coins:
+
+    if coin not in VALID_COINS:
         raise ValueError
 
     inserted_coins.append(coin)
@@ -33,8 +35,14 @@ def return_change(balance):
     """
     Function to return change to customer.
     """
-    if balance == 0:
-        change = []
+    remaining_balance = balance
+    change = []
+
+    for i in VALID_COINS:
+        number_coins = remaining_balance // i
+        remaining_balance = remaining_balance % i
+        change.extend([i for a in range(number_coins)])
+
     return change
 
 class InsufficientFunds(Exception):
