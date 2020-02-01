@@ -29,10 +29,26 @@ def test_buy_candy():
     """
     assert vending_machine.buy_product("candy", 315) == 0
 
-def test_insufficient_funds():
+def test_insufficient_funds_drink():
     """
     Asserts when the customer has not entered enough funds, the item cannot be purchased.
-    In this test, teh product costs 275, the customer has 274.
+    In this test, the product costs 275, the customer has 274.
     """
     with pytest.raises(vending_machine.InsufficientFunds):
         assert vending_machine.buy_product("drink", 274)
+
+def test_insufficient_funds_candy():
+    """
+    Asserts when the customer has not entered enough funds, the item cannot be purchased.
+    In this test, the product costs 315, the customer has 274.
+    """
+    with pytest.raises(vending_machine.InsufficientFunds):
+        assert vending_machine.buy_product("candy", 274)
+
+def test_insufficient_funds_chips():
+    """
+    Asserts when the customer has not entered enough funds, the item cannot be purchased.
+    In this test, the product costs 225, the customer has 224.
+    """
+    with pytest.raises(vending_machine.InsufficientFunds):
+        assert vending_machine.buy_product("chips", 224)
