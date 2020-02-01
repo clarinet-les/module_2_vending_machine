@@ -47,3 +47,10 @@ def test_two_dollars():
     """
     inserted_coins = []
     assert vending_machine.insert_coin(200, inserted_coins) == [200]
+
+def test_coin_insertion():
+    """
+    Asserts that given a 5 cent coin, the vending machine receives the coin.
+    """
+    inserted_coins = [5, 100]
+    assert vending_machine.insert_coin(25, inserted_coins) == [5, 100, 25]
