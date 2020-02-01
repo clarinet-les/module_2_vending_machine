@@ -40,3 +40,9 @@ def test_balance_7_cents():
     Assert that 7 cents is rounded down to 5 cents.
     """
     assert vending_machine.return_change(7) == [5]
+
+def test_negative_balance():
+    """
+    Assert that negative values return no change.
+    """
+    assert vending_machine.return_change(-25) == []

@@ -40,11 +40,11 @@ def return_change(balance):
 
     remaining_balance = balance
     change = []
-
-    for i in VALID_COINS:
-        number_coins = remaining_balance // i
-        remaining_balance = remaining_balance % i
-        change.extend([i for a in range(number_coins)])
+    if balance > 0:
+        for i in VALID_COINS:
+            number_coins = remaining_balance // i
+            remaining_balance = remaining_balance % i
+            change.extend([i for a in range(number_coins)])
 
     return change
 
