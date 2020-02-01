@@ -27,3 +27,10 @@ def test_balance_300_cents():
     Assert that 1 x $1 and 1 x $2 is returned when change is 300.
     """
     assert vending_machine.return_change(300) == [200, 100]
+
+def test_balance_265_cents():
+    """
+    Assert that 1 x $2, 2 x $0.25, 1 x $0.10 and 1 x $0.05 is returned
+    when change is 265.
+    """
+    assert vending_machine.return_change(265) == [200, 25, 25, 10, 5]
