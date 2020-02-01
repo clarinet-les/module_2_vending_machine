@@ -28,3 +28,11 @@ def test_buy_candy():
     Asserts that a drink can be purchased
     """
     assert vending_machine.buy_product("candy", 315) == 0
+
+def test_insufficient_funds():
+    """
+    Asserts when the customer has not entered enough funds, the item cannot be purchased.
+    In this test, teh product costs 275, the customer has 274.
+    """
+    with pytest.raises(vending_machine.InsufficientFunds):
+        assert vending_machine.buy_product("drink", 274)
