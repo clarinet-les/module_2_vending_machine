@@ -35,6 +35,9 @@ def return_change(balance):
     """
     Function to return change to customer.
     """
+    if balance % 5 != 0:
+        balance = (balance // 5) * 5
+
     remaining_balance = balance
     change = []
 

@@ -34,3 +34,9 @@ def test_balance_265_cents():
     when change is 265.
     """
     assert vending_machine.return_change(265) == [200, 25, 25, 10, 5]
+
+def test_balance_7_cents():
+    """
+    Assert that 7 cents is rounded down to 5 cents.
+    """
+    assert vending_machine.return_change(7) == [5]
