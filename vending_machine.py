@@ -29,6 +29,14 @@ def buy_product(product, balance):
     remaining_balance = balance - product_cost[product]
     return remaining_balance
 
+def return_change(balance):
+    """
+    Function to return change to customer.
+    """
+    if balance == 0:
+        change = []
+    return change
+
 class InsufficientFunds(Exception):
     """
     Exception used to indicate that there isn't

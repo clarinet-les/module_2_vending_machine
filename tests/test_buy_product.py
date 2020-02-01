@@ -1,5 +1,5 @@
 """
-Tests for the vending machine program, but product step
+Tests for the vending machine program, buy product step
 """
 import pytest
 import vending_machine
